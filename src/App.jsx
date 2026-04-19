@@ -5,9 +5,12 @@ import About from './pages/About'
 import Experience from './pages/Experience'
 import Work from './pages/Work'
 import Contact from './pages/Contact'
+import { Toaster } from 'react-hot-toast'
 
 function App() {
   return (
+    <>
+      <Toaster position='top-right'/>
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path='/about' element={<About />}/>
@@ -15,6 +18,7 @@ function App() {
       <Route path='/work' element={<Work />}/>
       <Route path='/Contact' element={<Contact />}/>
     </Routes>
+    </>
   )
 }
 
