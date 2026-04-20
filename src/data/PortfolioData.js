@@ -6,6 +6,27 @@ export const NAV_ITEMS = [
     {label: "Contact", path:"/contact"},
 ]
 
+export const lightColors = {
+    navBg: "bg-linear-to-br from-orange-200 to-white",
+    textPrimary: "text-gray-900",
+    textSecondary: "text-gray-800",
+    textHover: "text-orange-500",
+    textActive: "text-orange-600",
+    indicator: "from-orange-500 to-amber-500",
+    button: "from-orange-500 to-amber-500",
+};
+
+export const DarkColors = {
+    navBg: "bg-linear-to-br from-gray-700 to-black",
+    textPrimary: "text-white",
+    textSecondary: "text-gray-300",
+    textHover: "text-orange-400",
+    textActive: "text-orange-400",
+    indicator: "from-orange-500 to-amber-500",
+    button: "from-orange-500 to-amber-500",
+};
+
+
 export const PROFILE = {
     name: "Ankit Singh Rajbanshi",
     title: "Aspiring Backend Developer",
