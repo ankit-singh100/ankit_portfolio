@@ -1,16 +1,15 @@
 import { Link } from "react-router-dom"
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { PROFILE } from '../data/PortfolioData';
-import { Download, Mail } from 'lucide-react';
+import { DownloadIcon, Mail } from 'lucide-react';
 import image from '../assets/image.png';
 import hi from '../assets/hi.png';
 
-const HeroSection = ({ darkMode }) => {
+const HeroSection = ({ darkMode, setActiveSection }) => {
 
   const darkTheme = {
     textPrimary: "text-white",
     textSecondary: "text-gray-300",
-    button: "text-white border-2 border-orange-500 hover:bg-orange-600",
     buttonSecondary: "text-white border-2 border-orange-500 hover:bg-orange-600",
     decorativeCircle: "bg-orange-500 opacity-10"
   };
@@ -65,7 +64,7 @@ const HeroSection = ({ darkMode }) => {
             </h1>
 
             <p
-              className={`mb-6 sm:mb-8 leading-relaxed max-w-md sm:max-w-lg ${theme.textSecondary}`}
+              className={`mb-6 sm:mb-8 mt-3 leading-relaxed max-w-md sm:max-w-lg ${theme.textSecondary}`}
               data-aos="fade-up"
               data-aos-delay="600"
             >
@@ -85,17 +84,19 @@ const HeroSection = ({ darkMode }) => {
               >
                 <a href={PROFILE.resume} download className='w-full sm:w-auto'>
                   <button className='w-full sm:w-auto inline-flex items-center justify-center text-white bg-linear-to-r from-orange-500 to-amber-500 border-0 py-3 px-6 sm:px-8 hover:shadow-[0_0_40px_rgb(255,165,0,0.7)] rounded-full text-base sm:text-lg font-semibold transition-all duration-300 cursor-pointer'>
-                    <Download className='w-4 h-4 sm:h-5 sm:w-5 mr-2' />
+                    <DownloadIcon className='w-4 h-4 sm:h-5 sm:w-5 mr-2' />
                     Download Resume
                   </button>
                 </a>
 
-                <Link to="/contact" className="w-full sm:w-auto">
-                  <button className={`w-full sm:w-auto inline-flex items-center justify-center ${theme.buttonSecondary} py-3 px-6 sm:px-8 hover:shadow-[0_0_40px_rgb(255,165,0,0.7)] rounded-full text-base sm:text-lg font-semibold transition-all duration-300 cursor-pointer`}>
+                <a 
+                onClick={() => setActiveSection("contact")}
+                href="#contact" className="w-full sm:w-auto">
+                  <button className={`w-full sm:w-auto inline-flex items-center justify-center ${theme.buttonSecondary} py-3 px-6 sm:px-8 hover:shadow-[0_0_40px_rgb(255,165,0,0.7)] rounded-full text-base sm:text-lg font-semibold transition-all duration-300 transform cursor-pointer`}>
                     <Mail className='w-4 h-4 sm:w-5 sm:h-5 mr-2' />
                     Contact Me
                   </button>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
