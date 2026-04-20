@@ -37,3 +37,21 @@ export const PROFILE = {
     github: "https://github.com/ankit-singh100",
     linkedin: "https://www.linkedin.com/in/ankit-singh-b86821254/"
 }
+
+export const ABOUT = {
+    intro: "I specialize in Node.js with express, python with FastAPI, with strong interest in backend architecture and system realibility. I have experience with databases like MongoDB and PostgreSQL, and I'm passionate about building scalable and efficient backend systems. I'm eager to contribute my skills and grow as a backend developer.",
+    focus: "Right now, I'm focused on mastering REST APIs, database design, anf writing clean, maintainable server-side code while building pratical projects that solve real problems.",
+    skills: [
+        "Node.js",
+        "Express",
+        "Python",
+        "FastAPI",
+        "MongoDB",
+        "PostgreSQL",
+        "Docker(learning)",
+        "Git & GitHub",
+        "Postman",
+        "AWS(learning)",
+        "System Design(learning)"
+    ]
+}

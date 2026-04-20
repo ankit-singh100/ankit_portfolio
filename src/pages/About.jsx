@@ -1,4 +1,5 @@
 import about from "../assets/about.png";
+import { ABOUT } from "../data/PortfolioData";
 const About = ({ darkMode }) => {
 
   return (
@@ -10,7 +11,7 @@ const About = ({ darkMode }) => {
         className='flex flex-wrap justify-center gap-4 relative order-2 lg:order-1'>
           <div className='relative w-75 h-75 lg:w-96 lg:h-96'>
             {/* Image */}
-            <div className='absolute -inset-10 lg:-inset-20 bg-linear-to-l from-[#f97316] via-[#fb923c] to-[#f59e0b] rotate-12 star-shape z-0'
+            <div className='absolute -inset-6 lg:-inset-20 bg-linear-to-l from-[#f97316] via-[#fb923c] to-[#f59e0b] rotate-12 star-shape z-0'
             data-aos="zoom-in"
             data-aos-delay="600"></div>
             <img src={about}
@@ -30,6 +31,58 @@ const About = ({ darkMode }) => {
               About Me
             </h1>
           </header>
+
+          <p className={`text-sm sm:text-base lg:text-lg xl:text-xl mb-6 sm:mb-8 leading-relaxed bg-linear-to-r from-orange-900/10 to-orange-900/5 p-4 sm:p-6 rounded-xl sm:rounded-2xl backdrop-blur-sm
+            ${darkMode ? "text-gray-300" : "text-gray-700"}`}
+            data-aos="fade-up"
+            data-aos-delay="500">{ABOUT.intro}</p>
+
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 lg:gap-8 mg-6 sm:mb-8">
+              <div className="text-center"
+              data-aos="zoom-in"
+              data-aos-delay="600">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-400">
+                  5+
+                </div>
+
+                <div className={`text-xs sm:text-sm lg:text-base ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
+                  Education
+                </div>
+              </div>
+
+              <div className="text-center"
+              data-aos="zoom-in"
+              data-aos-delay="600">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-400">
+                  3+
+                </div>
+
+                <div className={`text-xs sm:text-sm lg:text-base ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
+                  Year Experience
+                </div>
+              </div>
+
+              <div className="text-center"
+              data-aos="zoom-in"
+              data-aos-delay="600">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-400">
+                  100+
+                </div>
+
+                <div className={`text-xs sm:text-sm lg:text-base ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
+                  Projects Completed
+                </div>
+              </div>
+
+              <button className={`w-full sm:w-auto border-2 border-orange-500 inline-flex items-center justify-center py-2 px-4 sm:px-6 hover:shadow-[0_0_40px_rgb(255,165,0,0.7)] rounded-full text-base sm:text-lg font-semibold transition-all duration-300 cursor-pointer ${darkMode 
+                ? "text-white bg-orange-500/10"
+                : "text-gray-800 bg-white/90"
+              }`}
+              data-aos="fade-up"
+              data-aos-delay="800">
+                    Learn More
+                  </button>
+            </div>
         </article>
       </div>
     </section>
