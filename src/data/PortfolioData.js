@@ -1,10 +1,10 @@
 export const NAV_ITEMS = [
-    {label: "Home", path:"/"},
-    {label: "About", path:"/about"},
-    {label: "Experience", path:"/experience"},
-    {label: "Work", path:"/work"},
-    {label: "Contact", path:"/contact"},
-]
+  { label: "Home", path: "#home" },
+  { label: "About", path: "#about" },
+  { label: "Experience", path: "#experience" },
+  { label: "Work", path: "#work" },
+  { label: "Contact", path: "#contact" },
+];
 
 export const lightColors = {
     navBg: "bg-linear-to-br from-orange-200 to-white",
