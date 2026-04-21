@@ -10,6 +10,7 @@ import Navbar from './components/Navbar'
 import  AOS  from 'aos'
 import "aos/dist/aos.css"
 import HeroSection from './components/HeroSection'
+import Skills from './pages/Skills'
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -39,6 +40,7 @@ function App() {
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} activeSection={activeSection} setActiveSection={setActiveSection}/>
       <HeroSection darkMode={darkMode} setActiveSection={setActiveSection}/>
       <About darkMode={darkMode}/>
+      <Skills darkMode={darkMode}/>
     </div>
   )
 }
