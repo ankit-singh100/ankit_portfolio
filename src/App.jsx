@@ -8,10 +8,14 @@ import "aos/dist/aos.css";
 import HeroSection from "./components/HeroSection";
 import Skills from "./pages/Skills";
 import Project from "./pages/Project";
+import Footer from "./components/Footer";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
-  const [activeSection, setActiveSection] = useState("home");
+  const [activeSection, setActiveSection] = useState(() => {
+    const hash = window.location.hash.replace("#", "");
+    return hash || "home";
+  });
 
   useEffect(() => {
     AOS.init({
@@ -51,6 +55,7 @@ function App() {
       <Skills darkMode={darkMode} />
       <Project darkMode={darkMode} />
       <Contact darkMode={darkMode} />
+      <Footer darkMode={darkMode} />
     </div>
   );
 }
