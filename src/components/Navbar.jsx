@@ -1,19 +1,22 @@
-import { Link } from "react-router-dom"
-import { useLocation } from "react-router-dom"   // ← add this
 import { DarkColors, lightColors, NAV_ITEMS } from "../data/PortfolioData";
 import { motion } from "framer-motion";
 import { Menu, Moon, Sun, X } from "lucide-react";
-import { act, useState } from "react";
+import { useState } from "react";
 
-const Navbar = ({ darkMode, toggleDarkMode, activeSection, setActiveSection }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);  
+const Navbar = ({
+  darkMode,
+  toggleDarkMode,
+  activeSection,
+  setActiveSection,
+}) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const colors = darkMode ? DarkColors : lightColors;
 
-const handleNavClick = (itemName) => {
-  setActiveSection(itemName.toLowerCase());
-  setIsMenuOpen(false);
-}
+  const handleNavClick = (itemName) => {
+    setActiveSection(itemName.toLowerCase());
+    setIsMenuOpen(false);
+  };
 
   return (
     <div className="flex justify-center w-full fixed z-50 mt-4">
@@ -24,7 +27,6 @@ const handleNavClick = (itemName) => {
         className={`flex items-center justify-center ${colors.navBg} backdrop-blur-lg rounded-2xl px-4 lg:px-8 py-2 shadow-lg`}
       >
         <div className="flex items-center justify-between w-full space-x-6 lg:space-x-8">
-
           {/* Logo */}
           <motion.a
             href="/"
@@ -32,7 +34,7 @@ const handleNavClick = (itemName) => {
             onClick={() => setIsMenuOpen(false)}
             className="flex items-center space-x-2 justify-between"
           >
-            <img src="/asr-logo.svg" className="w-6 h-6"/>
+            <img src="/asr-logo.svg" className="w-6 h-6" />
             <span className={`text-xl font-bold ${colors.textPrimary}`}>
               Ankit<span className="text-orange-500"></span>
             </span>
@@ -55,7 +57,7 @@ const handleNavClick = (itemName) => {
                   {item.label}
                 </motion.span>
 
-                {activeSection === item.label.toLowerCase() && (  
+                {activeSection === item.label.toLowerCase() && (
                   <motion.div
                     layoutId="navbar-indicator"
                     className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r rounded-full ${colors.indicator}`}
@@ -74,12 +76,15 @@ const handleNavClick = (itemName) => {
               className={`p-2 rounded-full ${
                 darkMode ? "bg-gray-700" : "bg-gray-200"
               } transition-colors cursor-pointer`}
-              aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
-            >
-              {darkMode
-                ? <Sun className="w-5 h-5 text-yellow-300" />
-                : <Moon className="w-5 h-5 text-gray-700" />
+              aria-label={
+                darkMode ? "Switch to light mode" : "Switch to dark mode"
               }
+            >
+              {darkMode ? (
+                <Sun className="w-5 h-5 text-yellow-300" />
+              ) : (
+                <Moon className="w-5 h-5 text-gray-700" />
+              )}
             </motion.button>
 
             {/* Button */}
@@ -103,10 +108,15 @@ const handleNavClick = (itemName) => {
                 darkMode ? "bg-gray-700" : "bg-gray-200"
               } cursor-pointer`}
             >
-              {isMenuOpen
-                ? <X className={`w-5 h-5 ${darkMode ? "text-white" : "text-gray-700"}`} />
-                : <Menu className={`w-5 h-5 ${darkMode ? "text-white" : "text-gray-700"}`} />
-              }
+              {isMenuOpen ? (
+                <X
+                  className={`w-5 h-5 ${darkMode ? "text-white" : "text-gray-700"}`}
+                />
+              ) : (
+                <Menu
+                  className={`w-5 h-5 ${darkMode ? "text-white" : "text-gray-700"}`}
+                />
+              )}
             </motion.button>
           </div>
         </div>
@@ -116,7 +126,7 @@ const handleNavClick = (itemName) => {
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
-            exit={{opacity: 0, height: 0 }}
+            exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
             className={`absolute top-full left-0 right-0 mt-2 lg:hidden ${
               darkMode ? "bg-gray-900/95" : "bg-white/95"
@@ -135,10 +145,12 @@ const handleNavClick = (itemName) => {
                   <motion.div
                     whileHover={{ x: 5 }}
                     className={`py-3 px-4 rounded-lg text-center 
-                    ${activeSection === item.label.toLowerCase() ? darkMode ? "bg-gray-800" : "bg-orange-50" : ""}`}
+                    ${activeSection === item.label.toLowerCase() ? (darkMode ? "bg-gray-800" : "bg-orange-50") : ""}`}
                   >
-                    <span className={`font-medium 
-                      ${activeSection === item.label.toLowerCase() ? colors.textActive : colors.textSecondary}`}>
+                    <span
+                      className={`font-medium 
+                      ${activeSection === item.label.toLowerCase() ? colors.textActive : colors.textSecondary}`}
+                    >
                       {item.label}
                     </span>
                   </motion.div>
