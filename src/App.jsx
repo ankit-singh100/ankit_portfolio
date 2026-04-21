@@ -1,14 +1,13 @@
-import './App.css'
-import About from './pages/About'
-import Work from './pages/Work'
-import Contact from './pages/Contact'
-import { useEffect, useState } from 'react'
-import Navbar from './components/Navbar'
-import  AOS  from 'aos'
-import "aos/dist/aos.css"
-import HeroSection from './components/HeroSection'
-import Skills from './pages/Skills'
-import Project from './pages/Project'
+import "./App.css";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import { useEffect, useState } from "react";
+import Navbar from "./components/Navbar";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import HeroSection from "./components/HeroSection";
+import Skills from "./pages/Skills";
+import Project from "./pages/Project";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -20,28 +19,40 @@ function App() {
       once: false,
       offset: 100,
     });
-    document.documentElement.classList.add('dark')
-  }, [])
+    document.documentElement.classList.add("dark");
+  }, []);
 
   useEffect(() => {
     AOS.refresh();
-  }, [darkMode])
+  }, [darkMode]);
 
   const toggleDarkMode = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
-    document.documentElement.classList.toggle('dark');
+    document.documentElement.classList.toggle("dark");
   };
 
   return (
-    <div className={darkMode ? "bg-linear-to-br from-gray-900 via-[#0d182e] to-gray-900 min-h-screen" : "bg-linear-to-br from-gray-50 to-blue-50 min-h-screen"}>
-      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} activeSection={activeSection} setActiveSection={setActiveSection}/>
-      <HeroSection darkMode={darkMode} setActiveSection={setActiveSection}/>
-      <About darkMode={darkMode}/>
-      <Skills darkMode={darkMode}/>
-      <Project darkMode={darkMode}/>
+    <div
+      className={
+        darkMode
+          ? "bg-linear-to-br from-gray-900 via-[#0d182e] to-gray-900 min-h-screen"
+          : "bg-linear-to-br from-gray-50 to-blue-50 min-h-screen"
+      }
+    >
+      <Navbar
+        darkMode={darkMode}
+        toggleDarkMode={toggleDarkMode}
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+      />
+      <HeroSection darkMode={darkMode} setActiveSection={setActiveSection} />
+      <About darkMode={darkMode} />
+      <Skills darkMode={darkMode} />
+      <Project darkMode={darkMode} />
+      <Contact darkMode={darkMode} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
