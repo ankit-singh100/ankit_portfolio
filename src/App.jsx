@@ -1,16 +1,14 @@
-import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import About from './pages/About'
-import Experience from './pages/Experience'
 import Work from './pages/Work'
 import Contact from './pages/Contact'
-import { Toaster } from 'react-hot-toast'
 import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import  AOS  from 'aos'
 import "aos/dist/aos.css"
 import HeroSection from './components/HeroSection'
 import Skills from './pages/Skills'
+import Project from './pages/Project'
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -41,6 +39,7 @@ function App() {
       <HeroSection darkMode={darkMode} setActiveSection={setActiveSection}/>
       <About darkMode={darkMode}/>
       <Skills darkMode={darkMode}/>
+      <Project darkMode={darkMode}/>
     </div>
   )
 }

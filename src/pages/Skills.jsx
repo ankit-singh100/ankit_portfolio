@@ -1,3 +1,5 @@
+import { ABOUT } from "../data/PortfolioData";
+
 const Skills = ({ darkMode }) => {
     const skill = [
   { name: "Node.js", level: 95, color: "from-emerald-500 to-lime-500" },
@@ -25,7 +27,7 @@ const Skills = ({ darkMode }) => {
             >
                 <h1 className='sm:text-4xl text-3xl font-bold title-font mb-4'
                 style={{
-                    color: darkMode ? "white" : "#1f2937"
+                    color: darkMode ? "while" : "#1f2937"
                 }}>My <span
                 style={{
                     background: "linear-gradient(to right, #f97316, #f59e0b)",
@@ -39,7 +41,7 @@ const Skills = ({ darkMode }) => {
                 className='text-lg max-w-2xl mx-auto leading-relaxed'
                 style={{
                     color: darkMode ? "#d1d5db" : "#4b5563"
-                }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam voluptate harum, suscipit debitis non minus nihil porro officia optio tenetur architecto odio delectus tempore velit ex dicta ipsum fugiat maxime.</p>
+                }}>{ABOUT.focus}</p>
             </div>
 
             <div className='flex flex-wrap -m-4'
